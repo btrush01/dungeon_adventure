@@ -204,7 +204,11 @@ def main():
                         end_game(player, treasures)
                         return
                 elif choice == 2:
-                    print(f"You've moved on to room {room + 1 if room < 5 else 1}.")
+                    if room < 5:
+                        print(f"You've moved on to room {room + 1}.")
+                    else:
+                        print("Game over.")
+                        end_game(player, treasures)
                     break
                 elif choice == 3:
                     check_status(player)
